@@ -9,6 +9,10 @@
   <strong>Content:</strong>
   <%= @article.content %>
 </p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@article.file.url,class:"avatar_style") %>
+</p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
@@ -26,3 +30,11 @@
     </div>
   </div>
 </section>
+
+<style>
+  .avatar_style
+  {
+    width: 10%;
+    height: 10%;
+  }
+</style>
