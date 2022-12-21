@@ -3,9 +3,11 @@ class Article
   include Mongoid::Timestamps
   include Mongoid::Paperclip
   include Mongoid::Attributes::Dynamic
-  
+
   field :name, type: String
   field :content, type: String
+  field :free,type: Mongoid::Boolean, default: 'true'
+
   has_mongoid_attached_file :file
 
   validates_attachment :file, content_type: { content_type: /\Aimage\/.*\Z/ }
