@@ -2,7 +2,8 @@ class Article
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paperclip
-
+  include Mongoid::Attributes::Dynamic
+  
   field :name, type: String
   field :content, type: String
   has_mongoid_attached_file :file
