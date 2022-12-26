@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @article.build_category
   end
 
   # GET /articles/1/edit
@@ -66,6 +67,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:name, :content,:file, :search)
+      params.require(:article).permit(:name, :content,:file, :search, category_attributes:[:name])
     end
 end

@@ -26,6 +26,13 @@
     <%= form.file_field :file %>
   </div>
 
+  <div class="field">
+    <%= form.fields_for :category do |category_fields| %>
+      <%= category_fields.label :name,"Category Name:" %>
+      <%= category_fields.text_field :name %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

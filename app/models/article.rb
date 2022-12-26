@@ -15,6 +15,8 @@ class Article
   validates_attachment :file, content_type: { content_type: /\Aimage\/.*\Z/ }
 
   has_many :comments, dependent: :destroy
+  embeds_one :category
+  accepts_nested_attributes_for :category
 
   def self.search(search)
     if search.present?
